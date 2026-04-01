@@ -147,21 +147,21 @@ const seedData = async () => {
     const users = await User.create([
       {
         name: 'Aarav Mehta',
-        email: 'admin@zorvyn.com',
+        email: 'admin@example.com',
         password: 'Admin@12345',
         role: 'admin',
         isActive: true,
       },
       {
         name: 'Nisha Kapoor',
-        email: 'analyst@zorvyn.com',
+        email: 'analyst@example.com',
         password: 'Analyst@12345',
         role: 'analyst',
         isActive: true,
       },
       {
         name: 'Rohan Verma',
-        email: 'viewer@zorvyn.com',
+        email: 'viewer@example.com',
         password: 'Viewer@12345',
         role: 'viewer',
         isActive: true,
@@ -176,7 +176,7 @@ const seedData = async () => {
     console.log(`Users created: ${users.length}`);
     console.log(`Records created: ${insertedRecords.length}`);
     console.log('Admin login credentials:');
-    console.log('Email: admin@zorvyn.com');
+    console.log('Email: admin@example.com');
     console.log('Password: Admin@12345');
 
     await mongoose.connection.close();

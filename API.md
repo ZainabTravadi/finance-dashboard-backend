@@ -74,7 +74,7 @@ Request body:
 
 ```json
 {
-  "email": "admin@zorvyn.com",
+  "email": "admin@example.com",
   "password": "Admin@12345"
 }
 ```
@@ -89,7 +89,7 @@ Response 200:
   "user": {
     "_id": "...",
     "name": "Aarav Mehta",
-    "email": "admin@zorvyn.com",
+    "email": "admin@example.com",
     "role": "admin",
     "isActive": true
   }
@@ -114,7 +114,7 @@ Response 200:
     {
       "_id": "...",
       "name": "Aarav Mehta",
-      "email": "admin@zorvyn.com",
+      "email": "admin@example.com",
       "role": "admin",
       "isActive": true
     }
@@ -220,7 +220,7 @@ Response 200:
       "createdBy": {
         "_id": "...",
         "name": "Aarav Mehta",
-        "email": "admin@zorvyn.com"
+        "email": "admin@example.com"
       }
     }
   ]
@@ -326,7 +326,7 @@ Login:
 ```bash
 curl -s -X POST http://localhost:5000/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"admin@zorvyn.com","password":"Admin@12345"}'
+  -d '{"email":"admin@example.com","password":"Admin@12345"}'
 ```
 
 Records (paginated):

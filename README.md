@@ -1,35 +1,38 @@
-# Zorvyn Finance Backend
+# 💰 Finance Dashboard Backend
 
-Express + MongoDB backend for role-based financial tracking and analytics.
+Production-ready Express and MongoDB backend for financial record management and analytics.
 
-## Overview
+## 🧠 Overview
 
-This project provides:
+This project provides a secure, modular API for:
 
-- JWT authentication
-- Role-based access control (viewer, analyst, admin)
-- Financial records CRUD with filtering and pagination
-- Dashboard analytics using MongoDB aggregation
-- Request validation and centralized error handling
-- Swagger/OpenAPI documentation
+- authentication and role-based access control
+- financial records lifecycle management
+- aggregated dashboard analytics
+- consistent validation and error handling
 
-## Tech Stack
+It is designed to be reusable across internal tools, admin platforms, and analytics-driven applications.
+
+## ⚙️ Tech Stack
 
 - Node.js
 - Express
-- MongoDB + Mongoose
+- MongoDB
+- Mongoose
 - Joi
 - JSON Web Token (JWT)
 - Swagger UI + swagger-jsdoc
 
-## Core Features
+## 🔐 Core Features
 
-- Auth: register and login with JWT token issuance
-- RBAC: route-level authorization by role
-- Records: create, update, delete, and query records with filters
-- Dashboard: summary, category split, monthly trends, combined metrics
+- Authentication: register and login with JWT token issuance
+- Authorization: role-based access control (viewer, analyst, admin)
+- Records API: create, read, update, delete, filtering, and pagination
+- Dashboard API: summary, category breakdown, monthly trends, and metrics
+- Reliability: centralized error middleware and input validation schemas
+- Developer experience: Swagger documentation at runtime
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Install dependencies
 
@@ -37,14 +40,14 @@ This project provides:
 npm install
 ```
 
-### 2. Configure environment
+### 2. Configure environment variables
 
 Create a .env file in the project root:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/zorvyn
-JWT_SECRET=replace-with-a-strong-secret
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 NODE_ENV=development
 ```
 
@@ -54,43 +57,43 @@ NODE_ENV=development
 npm run seed
 ```
 
-### 4. Run the application
+### 4. Start the server
 
 ```bash
 npm run dev
 ```
 
-Health check:
+### 5. Verify health endpoint
 
 ```bash
 curl http://localhost:5000/
 ```
 
-## API Documentation
+## 📘 API Documentation
 
 - Swagger UI: http://localhost:5000/api-docs
-- API reference file: [API.md](API.md)
+- Full endpoint reference: [API.md](API.md)
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```text
 src/
-   config/        # Database and Swagger setup
-   controllers/   # Request handlers
-   middleware/    # Auth, RBAC, global error handler
-   models/        # Mongoose schemas
-   routes/        # Route registration
-   utils/         # Validation schemas
-server.js        # App bootstrap
-seed.js          # Database seed script
+   config/         # Database and Swagger configuration
+   controllers/    # Request handlers
+   middleware/     # Auth, RBAC, and error middleware
+   models/         # Mongoose schemas and indexes
+   routes/         # HTTP route definitions
+   utils/          # Validation schemas and helpers
+server.js         # Application bootstrap
+seed.js           # Data seeding script
 ```
 
-## Architecture (Brief)
+## 🏗️ Architecture
 
-Request flow:
+Primary request flow:
 
 route -> middleware -> controller -> model -> response
 
-Analytics endpoints use MongoDB aggregation pipelines for server-side computation.
+Dashboard endpoints use MongoDB aggregation pipelines for server-side analytics and efficient query execution.
 
-Detailed design is in [ARCHITECTURE.md](ARCHITECTURE.md).
+Detailed architecture notes: [ARCHITECTURE.md](ARCHITECTURE.md)
